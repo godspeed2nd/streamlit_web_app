@@ -79,7 +79,7 @@ with st.form(key='profile_form'):
 #                payload = {
 #                "reviewText": "すごくいい感じに仕上がっていると思います",
 #                "userName": "curlより書き込み次郎",
-#                "mailAddress": "yosaitojp@gmail.com",
+#                "mailAddress": "xxx@gmail.com",
 #                "imagePath":"jinmeister-file-storage-20240912/file_test2.png"
 #                }
 #
