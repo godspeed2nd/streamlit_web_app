@@ -23,8 +23,8 @@ add -> commit -> push
 
 ‚Æ‚·‚é
 
-git add -A   
-git commit -m "first commit"
-git push -u origin main
+git add -A
+git commit -m "3rd commit"
+git push -u origin master
 
  
