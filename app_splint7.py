@@ -23,6 +23,8 @@ code = '''
 なお、webアプリは、streamlit　よりwebアプリを形成し、作成したREST APIをコールする(任意)
 '''
 
+# python言語用のシンタックスハイライトを表示する(コード上)
+st.code(code, language='python')
 
 st.subheader('自己紹介')
 st.text('自己紹介としては・・・バイクが好きです\n'
