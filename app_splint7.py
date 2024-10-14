@@ -124,20 +124,15 @@ with st.form(key='profile_form'):
                 print(res.json()) # 応答のJSON表示
                 st.text(f'応答のJSON表示: {res.json()}')
 
-def check_df(df):
-  if df.empty:
-    st.write('
-                <!-- Google tag (gtag.js) -->
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHGRERY4LV"></script>
-                <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
+# HTML埋め込み
+st.markdown("""
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHGRERY4LV"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-                gtag('config', 'G-GHGRERY4LV');
-                </script>
-                ',
-              unsafe_allow_html=True)
-    return False
-  else:
-    return True            
+        gtag('config', 'G-GHGRERY4LV');
+        </script>
+    """, unsafe_allow_html=True)     
