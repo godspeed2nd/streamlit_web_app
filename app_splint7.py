@@ -74,7 +74,7 @@ with st.form(key='profile_form'):
         reviewText = st.text_input('レビューコメント ⇒ コメント内容によりご挨拶メールの内容が変わります。好意的な度合いにより3種類')
         userName = st.text_input('お名前')
         mailAddress = st.text_input('メールアドレス')
-        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「egao.png」をコピペしてください')
+        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「egao.png」または、「ikari.png」をコピペしてください')
         
         #ボタン      
         submit_btn = st.form_submit_button('送信')
