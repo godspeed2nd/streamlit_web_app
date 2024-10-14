@@ -14,6 +14,16 @@ import streamlit as st
 st.title('Cloud Tech Academy')
 st.caption('スプリント7の演習です')
 
+code = '''
+演習の仕様は以下の通りです。
+ユーザーからの口コミのテキスト、画像、メールアドレス、氏名の入力に基づき、受信した口コミはAmazon DynamoDBに保存され、口コミ内容はAmazon Comprehendによる感情分析を行い、その結果に基づいてカスタマイズされたお礼メールを、Amazon SESを介してユーザーに自動送信します。
+また、画像はプロモーション用として使用するため、不適切な内容が含まれていないか、Amazon Rekognitionによる事前チェックを行います。(現在工事中)
+口コミの投稿は、API Gatewayを用いたAPIとして呼び出されます。APIのレスポンスを早めるため、APIでは口コミと画像のアップロードのみを行い、その後の分析やメール送信は、Amazon SQSを介して実行されるAWS Step Functionsのステートマシーンにより実行されます。
+
+なお、webアプリは、streamlit　よりwebアプリを形成し、作成したREST APIをコールする(任意)
+'''
+
+
 st.subheader('自己紹介')
 st.text('自己紹介としては・・・バイクが好きです\n'
         'よろしくです')
