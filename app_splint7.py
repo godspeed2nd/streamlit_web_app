@@ -71,10 +71,10 @@ with st.form(key='profile_form'):
 #                ('スポーツ','読書','プログラミング','アニメ・映画','釣り','料理'))
 
         # APIコール用引数項目
-        reviewText = st.text_input('レビューコメント')
+        reviewText = st.text_input('レビューコメント ⇒ コメント内容によりご挨拶メールの内容が変わります。好意的な度合いにより3種類')
         userName = st.text_input('お名前')
         mailAddress = st.text_input('メールアドレス')
-        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「file_test2.png」をコピペしてください')
+        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「egao.png」をコピペしてください')
         
         #ボタン      
         submit_btn = st.form_submit_button('送信')
