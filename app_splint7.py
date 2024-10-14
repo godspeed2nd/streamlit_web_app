@@ -26,7 +26,7 @@ code = '''
 # python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
 
-st.subheader('自己紹介')
+st.subheader('自己紹介2')
 st.text('自己紹介としては・・・バイクが好きです\n'
         'よろしくです')
 
