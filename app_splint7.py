@@ -23,6 +23,7 @@ Cloud Tech の紹介を以下より参照し、レビューコメントをくだ
 https://kws-cloud-tech.com/#
 '''
 
+# python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
 
 image = Image.open('cloudtechacademy_logo.png')
@@ -59,9 +60,9 @@ with st.form(key='profile_form'):
 
         # APIコール用引数項目
         reviewText = st.text_input('レビューコメント')
-        userName =st.text_input('お名前')
-        mailAddress =st.text_input('メールアドレス')
-        imagePath =st.text_input('画像ファイル名 ⇒ 工事中のため「file_test2.png」をコピペしてください')
+        userName = st.text_input('お名前')
+        mailAddress = st.text_input('メールアドレス')
+        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「file_test2.png」をコピペしてください')
         
         #ボタン      
         submit_btn = st.form_submit_button('送信')
