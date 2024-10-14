@@ -61,7 +61,7 @@ with st.form(key='profile_form'):
         reviewText = st.text_input('レビューコメント')
         userName =st.text_input('お名前')
         mailAddress =st.text_input('メールアドレス')
-        imagePath =st.text_input('画像ファイル名 ⇒ 工事中のため「jinmeister-file-storage-20240912/file_test2.png」をコピペしてください')
+        imagePath =st.text_input('画像ファイル名 ⇒ 工事中のため「file_test2.png」をコピペしてください')
         
         #ボタン      
         submit_btn = st.form_submit_button('送信')
