@@ -14,7 +14,7 @@ import pandas as pd
 import os
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です')
+st.caption('スプリント7の演習です ver 0.8')
 
 code = '''
 演習の仕様は以下の通りです。
@@ -29,7 +29,7 @@ st.code(code, language='python')
 
 st.markdown(":black[ただいま、一部工事中であり、指定した画像ファイルは,]:red[サーバー側にはアップロードされません。]")
 
-st.subheader('自己紹介 ver1.0')
+st.subheader('自己紹介')
 st.text('はじめまして。ごすです。自己紹介としては・・・バイクが好きです\n'
         'よろしくです')
 
