@@ -27,7 +27,8 @@ code = '''
 # python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
 
-st.markdown(":black[ただいま、一部工事中であり、指定した画像ファイルは,]:red[サーバー側にはアップロードされません。]")
+st.markdown(":black[ただいま、一部工事中であり、指定した画像ファイルは,]")
+st.markdown(":red[サーバー側にはアップロードされません。]")
 
 st.subheader('自己紹介')
 st.text('はじめまして。ごすです。自己紹介としては・・・バイクが好きです\n'
