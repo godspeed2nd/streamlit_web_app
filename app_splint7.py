@@ -11,6 +11,7 @@ import json
 
 import streamlit as st
 import pandas as pd
+import os
 
 st.title('Cloud Tech Academy')
 st.caption('スプリント7の演習です')
@@ -23,11 +24,12 @@ code = '''
 
 なお、webアプリは、streamlit　よりwebアプリを形成し、作成したREST APIをコールする(任意)
 '''
-
 # python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
 
-st.subheader('自己紹介3.1')
+st.markdown(":black[ただいま、一部工事中であり、指定した画像ファイルは,]:red[サーバー側にはアップロードされません。]")
+
+st.subheader('自己紹介')
 st.text('はじめまして。ごすです。自己紹介としては・・・バイクが好きです\n'
         'よろしくです')
 
@@ -41,9 +43,6 @@ st.code(code, language='python')
 
 image = Image.open('cloudtechacademy_logo.png')
 st.image(image, width=200)
-
-
-
 
 # video_file = open('unicorn.mid', 'rb')
 # video_bytes = video_file.read()
@@ -75,13 +74,30 @@ with st.form(key='profile_form'):
         reviewText = st.text_input('レビューコメント ⇒ コメント内容によりご挨拶メールの内容が変わります。好意的な度合いにより3種類')
         userName = st.text_input('お名前')
         mailAddress = st.text_input('メールアドレス')
-        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「egao.png」または、「ikari.png」をコピペしてください')
-        
+##        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「egao.png」または、「ikari.png」をコピペしてください')
+
+# 2024/10/15 start
+        # https://qiita.com/kins/items/52a52c2c000e364ab452
+#        st.markdown('# 画像を保存するデモ')
+        IMG_PATH = 'imgs'
+        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください ⇒ 現在は工事中のため、指定したファイルはアップロードされません。。。悲', type=['jpg', 'jpeg', 'png'])
+#        st.markdown(f'{file.name} をアップロードしました.')
+#        filename = os.path.join(IMG_PATH, file.name)
+
+# 2024/10/15 end
+
         #ボタン      
         submit_btn = st.form_submit_button('送信')
         cansel_btn = st.form_submit_button('キャンセル')
-
+        
         if submit_btn:
+                
+# 2024/10/15 start
+                print("file") 
+                print(file.name)
+                
+                imagePath = file.name
+# 2024/10/15 end
                 st.text(f'ようこそ {userName} さん!{mailAddress}にメールを送りました!')
 #                st.text(f'年齢層: {age_category}')
 #                st.text(f'趣味: {", ".join(hobby)}')
@@ -123,8 +139,22 @@ with st.form(key='profile_form'):
                 print(res.text) # 応答のテキスト表示
                 print(res.json()) # 応答のJSON表示
                 st.text(f'応答のJSON表示: {res.json()}')
+# 2024/10/15 start
+                url1 = "https://5qoczcx7a7.execute-api.ap-northeast-1.amazonaws.com/dev/fileupload-test-baket-20240911/"
+                url2 = file.name
+                url = url1 + url2
 
-# HTML埋め込み
+                print("url") 
+                print(url)
+
+                headers = {'Content-Type: image/png'}
+#                res = requests.put(
+#                        url,
+#                        headers=headers
+#                        )
+# 2024/10/15 end
+                
+# HTML埋め込み(現在、機能しておらず)
 # https://qiita.com/sypn/items/76928609348b5f13b2f5
 # https://qiita.com/sypn/items/76928609348b5f13b2f5
 st.markdown("""
