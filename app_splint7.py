@@ -96,8 +96,9 @@ with st.form(key='profile_form'):
         if submit_btn:
                 
 # 2024/10/15 start
-                print("file") 
+                print("file-1 ") 
                 print(file.name)
+                print(file)
                 
                 imagePath = file.name
 # 2024/10/15 end
@@ -150,7 +151,22 @@ with st.form(key='profile_form'):
                 print("url") 
                 print(url)
 
-                headers = {'Content-Type: image/png'}
+                print("file-2") 
+                print(file.name)
+                
+                headers = {
+                        "Content-Type": "image/png"
+                }
+
+#                img_path = os.path.join(IMG_PATH, file.name)
+                img_path = os.path.join(file.name)
+                print("img_path") 
+                print(img_path)
+
+#                with open(img_path, 'rb') as file:
+                with open(file.name, 'rb') as file:
+                        res = requests.put(url, data=file, headers=headers)
+
 #                res = requests.put(
 #                        url,
 #                        headers=headers
