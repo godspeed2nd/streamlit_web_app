@@ -125,7 +125,12 @@ with st.form(key='profile_form'):
                 st.text(f'応答のJSON表示: {res.json()}')
 
 # HTML埋め込み
+# https://qiita.com/sypn/items/76928609348b5f13b2f5
+# https://qiita.com/sypn/items/76928609348b5f13b2f5
 st.markdown("""
+        <!DOCTYPE html>
+        <html>
+        <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHGRERY4LV"></script>
         <script>
@@ -135,4 +140,6 @@ st.markdown("""
 
         gtag('config', 'G-GHGRERY4LV');
         </script>
+        </head>
+        </html>
     """, unsafe_allow_html=True)     
