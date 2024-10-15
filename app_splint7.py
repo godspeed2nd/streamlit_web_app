@@ -18,11 +18,13 @@ st.caption('スプリント7の演習です ver 0.8')
 
 code = '''
 演習の仕様は以下の通りです。
-ユーザーからの口コミのテキスト、画像、メールアドレス、氏名の入力に基づき、受信した口コミはAmazon DynamoDBに保存され、口コミ内容はAmazon Comprehendによる感情分析を行い、その結果に基づいてカスタマイズされたお礼メールを、Amazon SESを介してユーザーに自動送信します。
-また、画像はプロモーション用として使用するため、不適切な内容が含まれていないか、Amazon Rekognitionによる事前チェックを行います。(現在工事中)
-口コミの投稿は、API Gatewayを用いたAPIとして呼び出されます。APIのレスポンスを早めるため、APIでは口コミと画像のアップロードのみを行い、その後の分析やメール送信は、Amazon SQSを介して実行されるAWS Step Functionsのステートマシーンにより実行されます。
+ユーザーからの口コミのテキスト、画像、メールアドレス、氏名の入力に基づき、受信した口コミは Amazon DynamoDB に保存され、口コミ内容は Amazon Comprehend による感情分析を行い、その結果に基づいてカスタマイズされたお礼メールを、Amazon SES を介してユーザーに自動送信します。
+また、画像はプロモーション用として使用するため、不適切な内容が含まれていないか、Amazon Rekognition による事前チェックを行います。(現在工事中)
+口コミの投稿は、API Gateway を用いた API として呼び出されます。API のレスポンスを早めるため、API では口コミと画像のアップロードのみを行い、その後の分析やメール送信は、Amazon SQS を介して実行される AWS Step Functions のステートマシーンにより実行されます。
 
-なお、webアプリは、streamlit　よりwebアプリを形成し、作成したREST APIをコールする(任意)
+なお、webアプリは、streamlit よりwebアプリを形成し、作成したREST APIをコールする(任意)
+streamlit で利用する Python コードは、ローカルPCで開発し、Git Hub に登録することで、streamlit と連携が可能となる。
+そのため、ローカル PC での開発にVSCode を用いることで、Git Hub経由で streamlit 上の Pythonコードをアップデートすることが可能となる。
 '''
 # python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
