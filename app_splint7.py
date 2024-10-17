@@ -173,9 +173,11 @@ with st.form(key='profile_form'):
 #                img_path = os.path.join(IMG_PATH, file.name)
                 img_path = os.path.join(uploaddir, file.name)
                 # test
-#                img_path = r'C:\temp\pythonProject1\streamlit\imgs\IMG_2207.PNG'
+#                img_path = 'C:\temp\pythonProject1\streamlit\imgs\IMG_2207.PNG'
                 img_path2 = img_path.replace('/', os.sep)
                 # test
+                print("img_path") 
+                print(img_path)
                 print("img_path2") 
                 print(img_path2)
 
