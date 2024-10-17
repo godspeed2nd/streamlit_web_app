@@ -171,19 +171,19 @@ with st.form(key='profile_form'):
 #                img_path = os.path.join(file.name)
 
 #                img_path = os.path.join(IMG_PATH, file.name)
-                uploaddir2 = uploaddir.replace('/', os.sep)
                 img_path = os.path.join(uploaddir2, file.name)
+                img_path2 = img_path.replace('/', os.sep)
                 # test
 #                img_path = 'C:\temp\pythonProject1\streamlit\imgs\IMG_2207.PNG'
                 # test
-                print("uploaddir2") 
-                print(uploaddir2)
                 print("img_path") 
                 print(img_path)
+                print("img_path2") 
+                print(img_path2)
 
                 # openするファイル(img_path)は、S3バケットに保存されるファイルであり、
                 # 実在するローカル環境のディレクトリフルパス + ファイル名 である必要がある。
-                with open(img_path, 'rb') as file:
+                with open(img_path2, 'rb') as file:
 #                with open(file.name, 'rb') as file:
                         res = requests.put(url, data=file, headers=headers)
 
