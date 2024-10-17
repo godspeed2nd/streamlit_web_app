@@ -1,7 +1,8 @@
+# ローカル環境での起動方法
+#        PS C:\temp\pythonProject1\streamlit\CloudTech_Splint7> streamlit run app_splint7.py
+
 # https://www.youtube.com/watch?v=4nsTce1Oce8&t=1696s
 
-# 実行方法
-# PS C:\temp\pythonProject1\streamlit> streamlit run app.py    
 
 import streamlit as st
 from PIL import Image
@@ -14,7 +15,7 @@ import pandas as pd
 import os
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です ver 0.8')
+st.caption('スプリント7の演習です ver 0.92')
 
 code = '''
 演習の仕様は以下の通りです。
@@ -29,8 +30,8 @@ streamlit で利用する Python コードは、ローカルPCで開発し、Git
 # python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
 
-st.text('ただいま、一部工事中であり、指定した画像ファイルは,')
-st.markdown(":red[サーバー側にはアップロードされません。]")
+st.text('ただいま、一部工事中であり、指定する画像ファイルの,')
+st.markdown(":red[ディレクトリするパスは明記してください]")
 
 st.subheader('自己紹介')
 st.text('はじめまして。ごすです。自己紹介としては・・・バイクが好きです\n'
@@ -77,13 +78,17 @@ with st.form(key='profile_form'):
         reviewText = st.text_input('レビューコメント ⇒ コメント内容によりご挨拶メールの内容が変わります。好意的な度合いにより3種類')
         userName = st.text_input('お名前')
         mailAddress = st.text_input('メールアドレス')
+        uploaddir = st.text_input('下記のアップロードする画像ファイルのディレクトリをフルパスで、記載してください ⇒ 現在は工事中のため特別仕様')
 ##        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「egao.png」または、「ikari.png」をコピペしてください')
 
 # 2024/10/15 start
         # https://qiita.com/kins/items/52a52c2c000e364ab452
 #        st.markdown('# 画像を保存するデモ')
-        IMG_PATH = 'imgs'
-        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください ⇒ 現在は工事中のため、指定したファイルはアップロードされません。。。悲', type=['jpg', 'jpeg', 'png'])
+
+#        IMG_PATH = 'imgs'
+#        IMG_PATH = 'C:\temp\pythonProject1\streamlit'
+#        PATHDIR = '/temp/pythonProject1/streamlit/imgs'        
+        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください', type=['jpg', 'jpeg', 'png'])
 #        st.markdown(f'{file.name} をアップロードしました.')
 #        filename = os.path.join(IMG_PATH, file.name)
 
@@ -96,6 +101,8 @@ with st.form(key='profile_form'):
         if submit_btn:
                 
 # 2024/10/15 start
+                print("uploaddir") 
+                print(uploaddir)
                 print("file-1 ") 
                 print(file.name)
                 print(file)
@@ -159,12 +166,19 @@ with st.form(key='profile_form'):
                 }
 
 #                img_path = os.path.join(IMG_PATH, file.name)
-                img_path = os.path.join(file.name)
+## test                img_path = os.path.join(PATHDIR, file.name)
+#                IMG_PATH = 'c:/temp/pythonProject1/streamlit/imgs'
+#                img_path = os.path.join(file.name)
+
+#                img_path = os.path.join(IMG_PATH, file.name)
+                img_path = os.path.join(uploaddir, file.name)
                 print("img_path") 
                 print(img_path)
 
-#                with open(img_path, 'rb') as file:
-                with open(file.name, 'rb') as file:
+                # openするファイル(img_path)は、S3バケットに保存されるファイルであり、
+                # 実在するローカル環境のディレクトリフルパス + ファイル名 である必要がある。
+                with open(img_path, 'rb') as file:
+#                with open(file.name, 'rb') as file:
                         res = requests.put(url, data=file, headers=headers)
 
 #                res = requests.put(
