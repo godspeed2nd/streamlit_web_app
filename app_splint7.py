@@ -88,7 +88,7 @@ with st.form(key='profile_form'):
 #        IMG_PATH = 'imgs'
 #        IMG_PATH = 'C:\temp\pythonProject1\streamlit'
         #アップロード用の画像ファイルをローカルPC上にディレクトリとして作成してもらい、そこに画像ファイルを配置してもらう
-        PATHDIR = '/temp/images'       
+        PATHDIR = './temp/images'       
 #        PATHDIR = '/temp/pythonProject1/streamlit/imgs'        
         file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください', type=['jpg', 'jpeg', 'png'])
 #        st.markdown(f'{file.name} をアップロードしました.')
