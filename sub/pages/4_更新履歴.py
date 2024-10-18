@@ -13,6 +13,6 @@ df = pd.DataFrame({
 # 表示
 st.write(df)
 
-st.dataframe(df, width=200, height=240)
+# st.dataframe(df, width=200, height=240)
 # 表示
-st.write(df)
+# st.write(df)
