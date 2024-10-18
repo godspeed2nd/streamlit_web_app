@@ -38,9 +38,9 @@ https://streamlit.io/
 # python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
 
-st.subheader('本サイトの構成')
+# st.subheader('本サイトの構成')
 
 # image = Image.open('./data/splint7_ensyou_kouseizu.png')
 # st.image(image, width=1000)
 
-st.code(code, language='python')
+# st.code(code, language='python')
