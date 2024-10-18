@@ -78,7 +78,7 @@ with st.form(key='profile_form'):
         reviewText = st.text_input('レビューコメント ⇒ コメント内容によりご挨拶メールの内容が変わります。好意的な度合いにより3種類')
         userName = st.text_input('お名前')
         mailAddress = st.text_input('メールアドレス')
-        uploaddir = st.text_input('下記のアップロードする画像ファイルのディレクトリをフルパスで、記載してください ⇒ 現在は工事中のため特別仕様')
+#        uploaddir = st.text_input('下記のアップロードする画像ファイルのディレクトリをフルパスで、記載してください ⇒ 現在は工事中のため特別仕様')
 ##        imagePath = st.text_input('画像ファイル名 ⇒ 工事中のため「egao.png」または、「ikari.png」をコピペしてください')
 
 # 2024/10/15 start
@@ -87,6 +87,8 @@ with st.form(key='profile_form'):
 
 #        IMG_PATH = 'imgs'
 #        IMG_PATH = 'C:\temp\pythonProject1\streamlit'
+        #アップロード用の画像ファイルをローカルPC上にディレクトリとして作成してもらい、そこに画像ファイルを配置してもらう
+        IMG_PATH = '/temp/images'       
 #        PATHDIR = '/temp/pythonProject1/streamlit/imgs'        
         file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください', type=['jpg', 'jpeg', 'png'])
 #        st.markdown(f'{file.name} をアップロードしました.')
@@ -101,8 +103,8 @@ with st.form(key='profile_form'):
         if submit_btn:
                 
 # 2024/10/15 start
-                print("uploaddir") 
-                print(uploaddir)
+#                print("uploaddir") 
+#                print(uploaddir)
                 print("file-1 ") 
                 print(file.name)
                 print(file)
@@ -170,20 +172,20 @@ with st.form(key='profile_form'):
 #                IMG_PATH = 'c:/temp/pythonProject1/streamlit/imgs'
 #                img_path = os.path.join(file.name)
 
-#                img_path = os.path.join(IMG_PATH, file.name)
-                img_path = os.path.join(uploaddir, file.name)
-                img_path2 = img_path.replace('/', os.sep)
+                img_path = os.path.join(IMG_PATH, file.name)
+#                img_path = os.path.join(uploaddir, file.name)
+#                img_path2 = img_path.replace('/', os.sep)
                 # test
-                img_path2 = r'C:\temp\pythonProject1\streamlit\imgs\IMG_2207.PNG'
+#                img_path2 = r'C:\temp\pythonProject1\streamlit\imgs\IMG_2207.PNG'
                 # test
                 print("img_path") 
                 print(img_path)
-                print("img_path2") 
-                print(img_path2)
+#                print("img_path2") 
+#                print(img_path2)
 
                 # openするファイル(img_path)は、S3バケットに保存されるファイルであり、
                 # 実在するローカル環境のディレクトリフルパス + ファイル名 である必要がある。
-                with open(img_path2, 'rb') as file:
+                with open(img_path, 'rb') as file:
 #                with open(file.name, 'rb') as file:
                         res = requests.put(url, data=file, headers=headers)
 
