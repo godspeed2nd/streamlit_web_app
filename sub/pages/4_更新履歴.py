@@ -11,5 +11,7 @@ df = pd.DataFrame({
     '内容': ['αリリース','正式リリース'],
 })
 
+st.dataframe(df, width=100, height=240)
+
 # 表示
 st.write(df)
