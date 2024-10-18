@@ -1,5 +1,5 @@
 # ローカル環境での起動方法
-#        PS C:\temp\pythonProject1\streamlit\CloudTech_Splint7> streamlit run app_splint7.py
+#        PS C:\temp\pythonProject1\streamlit\CloudTech_Splint7\sub> streamlit run 1_はじめに.py      
 
 # https://www.youtube.com/watch?v=4nsTce1Oce8&t=1696s
 
