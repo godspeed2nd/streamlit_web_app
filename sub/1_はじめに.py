@@ -23,14 +23,11 @@ st.caption('スプリント7の演習です ver 0.95')
 st.subheader('はじめに')
 
 code = '''
-演習の仕様は以下の通りです。
-ユーザーからの口コミのテキスト、画像、メールアドレス、氏名の入力に基づき、受信した口コミは Amazon DynamoDB に保存され、口コミ内容は Amazon Comprehend による感情分析を行い、その結果に基づいてカスタマイズされたお礼メールを、Amazon SES を介してユーザーに自動送信します。
-また、画像はプロモーション用として使用するため、不適切な内容が含まれていないか、Amazon Rekognition による事前チェックを行います。(現在工事中)
-口コミの投稿は、API Gateway を用いた API として呼び出されます。API のレスポンスを早めるため、API では口コミと画像のアップロードのみを行い、その後の分析やメール送信は、Amazon SQS を介して実行される AWS Step Functions のステートマシーンにより実行されます。
+ユーザーが口コミのテキスト、画像、メールアドレス、氏名を入力すると、その内容が Amazon DynamoDB に保存されます。口コミテキストは Amazon Comprehend による感情分析が行われ、その結果に基づいてカスタマイズされたお礼メールが Amazon SES を通じて自動送信されます。また、送信された画像ファイルについては、S3バケットに保存されその後、 Amazon Rekognition による不適切な内容のチェックが行われます。
 
-なお、webアプリは、streamlit よりwebアプリを形成し、作成したREST APIをコールする(任意)
-streamlit で利用する Python コードは、ローカルPCで開発し、Git Hub に登録することで、streamlit と連携が可能となる。
-そのため、ローカル PC での開発にVSCode を用いることで、Git Hub経由で streamlit 上の Pythonコードをアップデートすることが可能となる。
+口コミの投稿は API Gateway 経由で API によって受け付けられます。API のレスポンスを高速化するため、API では口コミと画像のアップロードのみが行われ、感情分析やメール送信といった後続の処理は Amazon SQS を介した AWS Step Functions のステートマシンで非同期に実行されます。
+
+さらに、Webアプリは Streamlit を利用して構築され、作成した REST API を任意でコールできます。Streamlit で使用する Python コードはローカルPCで開発し、GitHub に登録することで Streamlit との連携が可能です。これにより、VSCode を使ってローカルPCで開発したコードを GitHub 経由で更新し、Streamlit 上のアプリに反映させることができます。
 
 参考
 https://streamlit.io/
