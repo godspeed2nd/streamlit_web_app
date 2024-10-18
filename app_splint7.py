@@ -15,7 +15,7 @@ import pandas as pd
 import os
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です ver 0.94')
+st.caption('スプリント7の演習です ver 0.941')
 
 code = '''
 演習の仕様は以下の通りです。
