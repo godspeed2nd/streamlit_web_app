@@ -96,13 +96,16 @@ with st.form(key='profile_form'):
 
 # 2024/10/15 end
 
+        #ボタン      
+        submit_btn = st.form_submit_button('送信')
+        cansel_btn = st.form_submit_button('キャンセル')
+
 ## test start 
         st.markdown('# 画像を保存するデモ')
         file = st.file_uploader('画像をアップロードしてください.', type=['jpg', 'jpeg', 'png'])
-        PATHDIR2 = 'imags'  
         if file:
                 st.markdown(f'{file.name} をアップロードしました.')
-                img_path = os.path.join(PATHDIR2, file.name)
+                img_path = os.path.join(PATHDIR, file.name)
                 print("test img_path") 
                 print(img_path)
                 # 画像を保存する
@@ -114,9 +117,6 @@ with st.form(key='profile_form'):
                 st.image(img)
 ## test end                
 
-        #ボタン      
-        submit_btn = st.form_submit_button('送信')
-        cansel_btn = st.form_submit_button('キャンセル')
         
         if submit_btn:
                 
