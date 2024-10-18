@@ -10,8 +10,9 @@ df = pd.DataFrame({
     '更新日': ['2024/10/15','2024/10/18'],
     '内容': ['αリリース','正式リリース'],
 })
+# 表示
+st.write(df)
 
-st.dataframe(df, width=100, height=240)
-
+st.dataframe(df, width=200, height=240)
 # 表示
 st.write(df)
