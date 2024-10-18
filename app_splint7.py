@@ -30,8 +30,9 @@ streamlit で利用する Python コードは、ローカルPCで開発し、Git
 # python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
 
-st.text('ただいま、一部工事中であり、指定する画像ファイルの,')
-st.markdown(":red[ディレクトリするパスは明記してください]")
+st.text('ただいま、一部工事中であり、指定する画像ファイルの')
+st.markdown(":red[アップロードでエラーとなります]")
+st.text('ですが、画像処理以外は動作します。')
 
 st.subheader('自己紹介')
 st.text('はじめまして。ごすです。自己紹介としては・・・バイクが好きです\n'
