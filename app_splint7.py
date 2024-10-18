@@ -15,7 +15,7 @@ import pandas as pd
 import os
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です ver 0.93')
+st.caption('スプリント7の演習です ver 0.931')
 
 code = '''
 演習の仕様は以下の通りです。
@@ -100,21 +100,21 @@ with st.form(key='profile_form'):
         submit_btn = st.form_submit_button('送信')
         cansel_btn = st.form_submit_button('キャンセル')
 
-## test start 
-        st.markdown('# 画像を保存するデモ')
-        file = st.file_uploader('画像をアップロードしてください.', type=['jpg', 'jpeg', 'png'])
-        if file:
-                st.markdown(f'{file.name} をアップロードしました.')
-                img_path = os.path.join(PATHDIR, file.name)
-                print("test img_path") 
-                print(img_path)
-                # 画像を保存する
-                with open(img_path, 'wb') as f:
-                        f.write(file.read())
-                
-                # 保存した画像を表示
-                img = Image.open(img_path)
-                st.image(img)
+## test start  
+##        st.markdown('# 画像を保存するデモ')
+##        file = st.file_uploader('画像をアップロードしてください.', type=['jpg', 'jpeg', 'png'])
+##        if file:
+##                st.markdown(f'{file.name} をアップロードしました.')
+##                img_path = os.path.join(PATHDIR, file.name)
+##                print("test img_path") 
+##                print(img_path)
+##                # 画像を保存する
+##                with open(img_path, 'wb') as f:
+##                        f.write(file.read())
+##                
+##                # 保存した画像を表示
+##                img = Image.open(img_path)
+##                st.image(img)
 ## test end                
 
         
