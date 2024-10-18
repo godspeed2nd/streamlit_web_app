@@ -37,8 +37,8 @@ with st.form(key='profile_form'):
 #        PATHDIR = '/temp/images'       
         PATHDIR = ''       
 
-        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください ⇒ 画像ファイルは予め /temp/images/画像ファイル.png に配置しておいてください。', type=['jpg', 'jpeg', 'png'])
-        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください9.', type=['jpg', 'jpeg', 'png'])
+#        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください ⇒ 画像ファイルは予め /temp/images/画像ファイル.png に配置しておいてください。', type=['jpg', 'jpeg', 'png'])
+        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください', type=['jpg', 'jpeg', 'png'])
 #       PATHDIRのディレクトリは事前に必要。だが、ファイルはどこのディレクトリから指定してもよい。
 
         #ボタン      
