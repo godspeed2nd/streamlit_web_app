@@ -26,6 +26,9 @@ code = '''
 なお、webアプリは、streamlit よりwebアプリを形成し、作成したREST APIをコールする(任意)
 streamlit で利用する Python コードは、ローカルPCで開発し、Git Hub に登録することで、streamlit と連携が可能となる。
 そのため、ローカル PC での開発にVSCode を用いることで、Git Hub経由で streamlit 上の Pythonコードをアップデートすることが可能となる。
+
+参考
+https://streamlit.io/
 '''
 # python言語用のシンタックスハイライトを表示する(コード上)
 st.code(code, language='python')
