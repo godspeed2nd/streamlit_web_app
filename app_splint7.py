@@ -124,6 +124,11 @@ with st.form(key='profile_form'):
 
                 res = requests.put(url, data=file, headers=headers)
 
+                print(res.status_code) # 応答のHTTPステータスコード
+                print(res.text) # 応答のテキスト表示
+                print(res.json()) # 応答のJSON表示
+                st.text(f'応答のJSON表示: {res.json()}')
+                
 #                with open(img_path, 'rb') as file:
 #                with open(file.name, 'rb') as file:
 #                        res = requests.put(url, data=file, headers=headers)
