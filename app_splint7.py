@@ -185,6 +185,10 @@ with st.form(key='profile_form'):
 
                 # openするファイル(img_path)は、S3バケットに保存されるファイルであり、
                 # 実在するローカル環境のディレクトリフルパス + ファイル名 である必要がある。
+                ospath = os.getcwd()
+                print("ospath")
+                print(ospath)
+                
                 with open(img_path, 'rb') as file:
 #                with open(file.name, 'rb') as file:
                         res = requests.put(url, data=file, headers=headers)
