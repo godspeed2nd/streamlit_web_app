@@ -7,7 +7,7 @@
 import streamlit as st
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です ver 1.0')
+st.caption('スプリント7の演習です ver 1.02')
 
 # image = Image.open('/data/cloudtechacademy_logo.png')
 # st.image(image, width=200)
