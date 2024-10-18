@@ -36,7 +36,8 @@ with st.form(key='profile_form'):
         #アップロード用の画像ファイルをローカルPC上にディレクトリとして作成してもらい、そこに画像ファイルを配置してもらう
         PATHDIR = '/temp/images'       
 
-        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください ⇒ 画像ファイルは予め /temp/images/画像ファイル.png に配置しておいてください。', type=['jpg', 'jpeg', 'png'])
+#        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください ⇒ 画像ファイルは予め /temp/images/画像ファイル.png に配置しておいてください。', type=['jpg', 'jpeg', 'png'])
+        file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください9.', type=['jpg', 'jpeg', 'png'])
 
         #ボタン      
         submit_btn = st.form_submit_button('送信')
