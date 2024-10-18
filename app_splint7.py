@@ -102,6 +102,8 @@ with st.form(key='profile_form'):
         if file:
                 st.markdown(f'{file.name} をアップロードしました.')
                 img_path = os.path.join(PATHDIR, file.name)
+                print("test img_path") 
+                print(img_path)
                 # 画像を保存する
                 with open(img_path, 'wb') as f:
                         f.write(file.read())
