@@ -15,7 +15,7 @@ import pandas as pd
 import os
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です ver 0.941')
+st.caption('スプリント7の演習です ver 0.95')
 
 st.subheader('演習結果')
 
