@@ -17,7 +17,7 @@ import os
 st.title('Cloud Tech Academy')
 st.caption('スプリント7の演習です ver 0.95')
 
-st.subheader('演習結果')
+st.subheader('演習紹介')
 
 code = '''
 Cloud Tech の紹介を以下より参照し、レビューコメントをください。
