@@ -15,7 +15,7 @@ import pandas as pd
 import os
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です ver 0.92')
+st.caption('スプリント7の演習です ver 0.93')
 
 code = '''
 演習の仕様は以下の通りです。
@@ -88,7 +88,7 @@ with st.form(key='profile_form'):
 #        IMG_PATH = 'imgs'
 #        IMG_PATH = 'C:\temp\pythonProject1\streamlit'
         #アップロード用の画像ファイルをローカルPC上にディレクトリとして作成してもらい、そこに画像ファイルを配置してもらう
-        IMG_PATH = '/temp/images'       
+        PATHDIR = '/temp/images'       
 #        PATHDIR = '/temp/pythonProject1/streamlit/imgs'        
         file = st.file_uploader('jpg, jpeg, png形式の画像をアップロードしてください', type=['jpg', 'jpeg', 'png'])
 #        st.markdown(f'{file.name} をアップロードしました.')
@@ -172,7 +172,7 @@ with st.form(key='profile_form'):
 #                IMG_PATH = 'c:/temp/pythonProject1/streamlit/imgs'
 #                img_path = os.path.join(file.name)
 
-                img_path = os.path.join(IMG_PATH, file.name)
+                img_path = os.path.join(PATHDIR, file.name)
 #                img_path = os.path.join(uploaddir, file.name)
 #                img_path2 = img_path.replace('/', os.sep)
                 # test
