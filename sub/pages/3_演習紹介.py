@@ -3,16 +3,12 @@
 
 # https://www.youtube.com/watch?v=4nsTce1Oce8&t=1696s
 
-
 import streamlit as st
 from PIL import Image
-
 import requests
 import json
-
-import streamlit as st
-import pandas as pd
 import os
+
 
 st.title('Cloud Tech Academy')
 st.caption('スプリント7の演習です ver 1.0')

@@ -5,14 +5,6 @@
 
 
 import streamlit as st
-from PIL import Image
-
-import requests
-import json
-
-import streamlit as st
-import pandas as pd
-import os
 
 st.title('Cloud Tech Academy')
 st.caption('スプリント7の演習です ver 1.0')
