@@ -17,8 +17,8 @@ import os
 st.title('Cloud Tech Academy')
 st.caption('スプリント7の演習です ver 0.941')
 
-image = Image.open('./data/cloudtechacademy_logo.png')
-st.image(image, width=200)
+# image = Image.open('./data/cloudtechacademy_logo.png')
+# st.image(image, width=200)
 
 st.subheader('はじめに')
 
@@ -40,7 +40,7 @@ st.code(code, language='python')
 
 st.subheader('本サイトの構成')
 
-image = Image.open('./data/splint7_ensyou_kouseizu.png')
-st.image(image, width=1000)
+# image = Image.open('./data/splint7_ensyou_kouseizu.png')
+# st.image(image, width=1000)
 
 st.code(code, language='python')
