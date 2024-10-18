@@ -96,6 +96,21 @@ with st.form(key='profile_form'):
 
 # 2024/10/15 end
 
+## test start 
+        st.markdown('# 画像を保存するデモ')
+        file = st.file_uploader('画像をアップロードしてください.', type=['jpg', 'jpeg', 'png'])
+        if file:
+                st.markdown(f'{file.name} をアップロードしました.')
+                img_path = os.path.join(PATHDIR, file.name)
+                # 画像を保存する
+                with open(img_path, 'wb') as f:
+                        f.write(file.read())
+                
+                # 保存した画像を表示
+                img = Image.open(img_path)
+                st.image(img)
+## test end                
+
         #ボタン      
         submit_btn = st.form_submit_button('送信')
         cansel_btn = st.form_submit_button('キャンセル')
@@ -188,7 +203,8 @@ with st.form(key='profile_form'):
                 ospath = os.getcwd()
                 print("ospath")
                 print(ospath)
-                
+
+
                 with open(img_path, 'rb') as file:
 #                with open(file.name, 'rb') as file:
                         res = requests.put(url, data=file, headers=headers)
