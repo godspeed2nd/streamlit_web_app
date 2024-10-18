@@ -99,9 +99,10 @@ with st.form(key='profile_form'):
 ## test start 
         st.markdown('# 画像を保存するデモ')
         file = st.file_uploader('画像をアップロードしてください.', type=['jpg', 'jpeg', 'png'])
+        PATHDIR2 = 'imags'  
         if file:
                 st.markdown(f'{file.name} をアップロードしました.')
-                img_path = os.path.join(PATHDIR, file.name)
+                img_path = os.path.join(PATHDIR2, file.name)
                 print("test img_path") 
                 print(img_path)
                 # 画像を保存する
