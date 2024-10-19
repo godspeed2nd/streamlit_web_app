@@ -4,6 +4,7 @@ import pandas as pd
 st.title('Cloud Tech Academy')
 st.caption('スプリント7の演習です ver 1.0')
 
+# 以下の記述は効果出ていない謎
 st.markdown(
     """
     <style>
@@ -15,7 +16,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-image = 'cloudtechacademy_logo.png'
+# 以下の記述は効果出ていない謎
+
+#以下のディレクトリがローカルPCのどこに該当するのか不明・・・
+#ディレクトリが画像もないのに表示される。。。謎
+image = '/app/static/image.png'
+#image = '/static/image.png'
 css = f'''
 <style>
     .stApp {{
@@ -42,7 +48,7 @@ st.markdown("""
         border-radius: 10px;
     }
     </style>
-    <p class='my-text'>更新履歴</p>
+    <p class='my-text'>更新履歴<br>
     """, unsafe_allow_html=True)
 
 df = pd.DataFrame({
