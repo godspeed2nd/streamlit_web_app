@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です ver 1.0')
+st.caption('スプリント7の演習です ver 1.01')
 
 # 以下の記述は効果出ていない謎
 st.markdown(
