@@ -9,7 +9,6 @@ import requests
 import json
 import os
 
-
 st.title('Cloud Tech Academy')
 st.caption('スプリント7の演習です ver 1.0')
 
@@ -43,76 +42,84 @@ with st.form(key='profile_form'):
 
         if submit_btn:
                 
-                if file is None:
-                        imagePath = ""
-                else:
-                        imagePath = file.name
+                if not reviewText:
+                        print("reviewText is None") 
+                        st.text(f'レビューコメントを入力してください')
+                elif not userName:
+                        st.text(f'お名前を入力してください')
+                elif not mailAddress:
+                        st.text(f'メールアドレスを入力してください')
+                else:                                
+                        print("Input All OK") 
+                        if file is None:
+                                imagePath = ""
+                        else:
+                                imagePath = file.name
 
-                print("imagePath") 
-                print(imagePath)
+                        print("imagePath") 
+                        print(imagePath)
 
-                st.text(f'ようこそ {userName} さん!{mailAddress}にメールを送りました!')
+                        st.text(f'ようこそ {userName} さん!{mailAddress}にメールを送りました!')
 
-                url = "https://5qoczcx7a7.execute-api.ap-northeast-1.amazonaws.com/dev"
-                headers = {'content-type': 'application/json; charset=UTF-8'}
-                payload = {
-                "reviewText": reviewText,
-                "userName": userName,
-                "mailAddress": mailAddress,
-                "imagePath": imagePath
-                }
+                        url = "https://5qoczcx7a7.execute-api.ap-northeast-1.amazonaws.com/dev"
+                        headers = {'content-type': 'application/json; charset=UTF-8'}
+                        payload = {
+                        "reviewText": reviewText,
+                        "userName": userName,
+                        "mailAddress": mailAddress,
+                        "imagePath": imagePath
+                        }
 
-                res = requests.post(
-                        url,
-                        data=json.dumps(payload), 
-                        headers=headers
-                        )
-                # ここまで
+                        res = requests.post(
+                                url,
+                                data=json.dumps(payload), 
+                                headers=headers
+                                )
+                        # ここまで
 
-                print(res.status_code) # 応答のHTTPステータスコード
-                print(res.text) # 応答のテキスト表示
-                print(res.json()) # 応答のJSON表示
-                st.text(f'応答のJSON表示: {res.json()}')
+                        print(res.status_code) # 応答のHTTPステータスコード
+                        print(res.text) # 応答のテキスト表示
+                        print(res.json()) # 応答のJSON表示
+                        st.text(f'応答のJSON表示: {res.json()}')
 
-                url1 = "https://5qoczcx7a7.execute-api.ap-northeast-1.amazonaws.com/dev/fileupload-test-baket-20240911/"
+                        url1 = "https://5qoczcx7a7.execute-api.ap-northeast-1.amazonaws.com/dev/fileupload-test-baket-20240911/"
 
-                if file is None:
-                        url2 = ""
-                else:
-                        url2 = file.name
+                        if file is None:
+                                url2 = ""
+                        else:
+                                url2 = file.name
+                                
+                        url = url1 + url2
+
+                        print("url") 
+                        print(url)
+
+        #                print("file-2") 
+        #                print(file.name)
                         
-                url = url1 + url2
+                        headers = {
+                                "Content-Type": "image/png"
+                        }
 
-                print("url") 
-                print(url)
+        #                img_path = os.path.join(PATHDIR, file.name)
 
-#                print("file-2") 
-#                print(file.name)
-                
-                headers = {
-                        "Content-Type": "image/png"
-                }
+        #                print("img_path") 
+        #                print(img_path)
 
-#                img_path = os.path.join(PATHDIR, file.name)
+                        # openするファイル(img_path)は、S3バケットに保存されるファイルであり、
+                        # 実在するローカル環境のディレクトリフルパス + ファイル名 である必要がある。
+                        ospath = os.getcwd()
+                        print("ospath")
+                        print(ospath)
 
-#                print("img_path") 
-#                print(img_path)
+                        res = requests.put(url, data=file, headers=headers)
 
-                # openするファイル(img_path)は、S3バケットに保存されるファイルであり、
-                # 実在するローカル環境のディレクトリフルパス + ファイル名 である必要がある。
-                ospath = os.getcwd()
-                print("ospath")
-                print(ospath)
-
-                res = requests.put(url, data=file, headers=headers)
-
-                print(res.status_code) # 応答のHTTPステータスコード
-                print(res.text) # 応答のテキスト表示
-#                print(res.json()) # 応答のJSON表示
-                st.text(f'画像upのHTTPステータスコード: {res.status_code}')
-                
-#                with open(img_path, 'rb') as file:
-#                with open(file.name, 'rb') as file:
-#                        res = requests.put(url, data=file, headers=headers)
+                        print(res.status_code) # 応答のHTTPステータスコード
+                        print(res.text) # 応答のテキスト表示
+        #                print(res.json()) # 応答のJSON表示
+                        st.text(f'画像upのHTTPステータスコード: {res.status_code}')
+        #                with open(img_path, 'rb') as file:
+        #                with open(file.name, 'rb') as file:
+        #                        res = requests.put(url, data=file, headers=headers)
 
                 
