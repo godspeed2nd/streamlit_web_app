@@ -43,11 +43,14 @@ with st.form(key='profile_form'):
 
         if submit_btn:
                 
-#                print("file-1 ") 
-#                print(file.name)
-#                print(file)
-                
-                imagePath = file.name
+                if file.name is None:
+                        imagePath = ""
+                else:
+                        imagePath = file.name
+
+                print("imagePath") 
+                print(imagePath)
+
                 st.text(f'ようこそ {userName} さん!{mailAddress}にメールを送りました!')
 
                 url = "https://5qoczcx7a7.execute-api.ap-northeast-1.amazonaws.com/dev"
