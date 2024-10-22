@@ -44,11 +44,14 @@ with st.form(key='profile_form'):
                 
                 if not reviewText:
                         print("reviewText is None") 
-                        st.text(f'レビューコメントを入力してください')
+#                        st.text(f'レビューコメントを入力してください')
+                        st.markdown(":red[レビューコメントを入力してください]")
                 elif not userName:
-                        st.text(f'お名前を入力してください')
+#                        st.text(f'お名前を入力してください')
+                        st.markdown(":violet[お名前を入力してください]")
                 elif not mailAddress:
-                        st.text(f'メールアドレスを入力してください')
+#                        st.text(f'メールアドレスを入力してください')
+                        st.markdown(":orange[メールアドレスを入力してください]")
                 else:                                
                         print("Input All OK") 
                         if file is None:
