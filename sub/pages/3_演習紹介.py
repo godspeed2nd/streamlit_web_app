@@ -43,9 +43,9 @@ with st.form(key='profile_form'):
 
         if submit_btn:
                 
-                print("file-1 ") 
-                print(file.name)
-                print(file)
+#                print("file-1 ") 
+#                print(file.name)
+#                print(file)
                 
                 imagePath = file.name
                 st.text(f'ようこそ {userName} さん!{mailAddress}にメールを送りました!')
