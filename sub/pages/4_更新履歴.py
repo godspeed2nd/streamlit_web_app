@@ -20,8 +20,9 @@ st.markdown(
 
 #以下のディレクトリがローカルPCのどこに該当するのか不明・・・
 #ディレクトリが画像もないのに表示される。。。謎
-image = '/app/static/image.png'
-#image = '/static/image.png'
+#image = '/app/static/image.png'
+#image = 'c:/temp/pythonProject1/streamlit/CloudTech_Splint7/sub/static/image_a.png'
+image = '/static/image_a.png'
 css = f'''
 <style>
     .stApp {{
