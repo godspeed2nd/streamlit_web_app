@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.title('Cloud Tech Academy')
-st.caption('スプリント7の演習です ver 1.01')
+st.caption('スプリント7の演習です ver 1.0')
 
 # 以下の記述は効果出ていない謎
 st.markdown(
@@ -53,7 +53,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 df = pd.DataFrame({
-    'バージョン': ['0.5','1.1'],
+    'バージョン': ['0.5','1.0'],
     '更新日': ['2024/10/15','2024/10/18'],
     '内容': ['αリリース','正式リリース'],
 })
