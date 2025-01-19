@@ -9,7 +9,7 @@ import requests
 import json
 import os
 
-st.title('Cloud Tech Academy')
+st.title('Cloud Tech Academy[ミラーサイト]')
 st.caption('スプリント7の演習です ver 1.0')
 
 st.subheader('演習紹介')
