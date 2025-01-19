@@ -53,9 +53,9 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 df = pd.DataFrame({
-    'バージョン': ['0.5','1.0'],
-    '更新日': ['2024/10/15','2024/10/18'],
-    '内容': ['αリリース','正式リリース'],
+    'バージョン': ['0.5','0.95','1.0','1.5'],
+    '更新日': ['2024/10/15','2024/10/18','2024/10/18','2025/01/19'],
+    '内容': ['αリリース','βリリース','Streamlitサイトサービス開始(ミラーサイト : https://appwebapp-tatb6fzbsodmepomxxyzjo.streamlit.app/)','EC2環境にてサービス開放(http://ec2-54-249-108-169.ap-northeast-1.compute.amazonaws.com:8501/)'],
 })
 
 primaryColor = "#0000FF"
