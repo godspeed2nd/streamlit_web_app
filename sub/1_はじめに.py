@@ -6,7 +6,7 @@
 
 import streamlit as st
 
-st.title('Cloud Tech Academy')
+st.title('Cloud Tech Academy[ミラーサイト]')
 st.caption('スプリント7の演習です ver 1.0')
 
 # image = Image.open('/data/cloudtechacademy_logo.png')
